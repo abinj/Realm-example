@@ -1,8 +1,11 @@
 package com.example.abin.realm_example.utility;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Base64;
 
+import com.example.abin.realm_example.constants.DbConstants;
+import com.example.abin.realm_example.constants.GenericConstants;
 import com.example.abin.realm_example.model.User;
 
 import javax.crypto.SecretKey;
@@ -12,10 +15,11 @@ import javax.crypto.spec.DESKeySpec;
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 import io.realm.RealmObject;
+import io.realm.RealmResults;
 import io.realm.exceptions.RealmException;
 
 /**
- * Created by dxuser on 9/3/16.
+ * An utility class for Realm db operations.
  */
 public class DbUtility {
     private Context context;
@@ -37,7 +41,40 @@ public class DbUtility {
             return true;
         } catch (RealmException e) {
             e.printStackTrace();
+            return false;
         }
-        return false;
+    }
+
+    public boolean deleteUser(String email) {
+        try {
+            RealmResults<User> user = realm.where(User.class).equalTo(DbConstants.EMAIL_KEY, email)
+                    .findAll();
+            user.clear();
+            return true;
+        } catch (RealmException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public User readUser(String email) {
+        User user = realm.where(User.class).equalTo(DbConstants.EMAIL_KEY, email)
+                .findFirst();
+        return user;
+    }
+
+    public boolean isUserExist(String email) {
+        try {
+            RealmResults<User> user = realm.where(User.class).equalTo(DbConstants.EMAIL_KEY, email)
+                    .findAll();
+            if (user.size() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (RealmException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 }

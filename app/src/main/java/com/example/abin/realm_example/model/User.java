@@ -4,13 +4,14 @@ import io.realm.RealmObject;
 import io.realm.annotations.Required;
 
 /**
- * Created by dxuser on 9/3/16.
+ * A model POJO class for user.
  */
 public class User extends RealmObject {
     @Required
     private String email;
     @Required
     private String password;
+    @Required
     private String name;
 
 

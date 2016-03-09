@@ -3,7 +3,7 @@ package com.example.abin.realm_example.utility;
 import android.util.Base64;
 
 /**
- * Created by dxuser on 9/3/16.
+ * An utility class for base operations.
  */
 public class BaseUtility {
 
