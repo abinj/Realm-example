@@ -54,6 +54,7 @@ public class HomePageActivity extends RoboActivity {
                 mNameEditTxt.setEnabled(true);
                 mEmailEditText.setEnabled(true);
                 mPasswordEditText.setEnabled(true);
+
             }
         });
 
