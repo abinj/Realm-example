@@ -1,9 +1,13 @@
-package com.example.abin.realm_example;
+package com.example.abin.realm_example.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.abin.realm_example.R;
+import com.example.abin.realm_example.activity.fragment.SignInFragment;
+import com.example.abin.realm_example.activity.fragment.SignUpFragment;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
@@ -25,14 +29,16 @@ public class MainActivity extends RoboActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getFragmentManager().beginTransaction().add(R.id.fragment_container
+                        , new SignInFragment()).commit();
             }
         });
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                getFragmentManager().beginTransaction().add(R.id.fragment_container
+                        , new SignUpFragment()).commit();
             }
         });
 

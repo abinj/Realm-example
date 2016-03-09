@@ -34,10 +34,10 @@
         android:layout_marginTop="10dp"/>
 
     <Button
-        android:id="@+id/sign_in_btn"
+        android:id="@+id/sign_up_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LogIn"
+        android:text="SignUp"
         android:textColor="#fff"
         android:background="@drawable/button"
         android:layout_gravity="center"
