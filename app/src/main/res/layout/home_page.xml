@@ -35,8 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Donald"
             android:layout_weight="0.5"
-            android:enabled="false"
-            android:nextFocusRight="@id/email_edit"/>
+            android:enabled="false" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,8 +60,7 @@
             android:text="Donald"
             android:inputType="textEmailAddress"
             android:layout_weight="0.5"
-            android:enabled="false"
-            android:nextFocusRight="@id/password_edit"/>
+            android:enabled="false" />
     </LinearLayout>
 
     <LinearLayout
