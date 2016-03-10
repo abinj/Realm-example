@@ -65,9 +65,15 @@ public class HomePageActivity extends RoboActivity {
                 DbUtility dbUtility = new DbUtility(getApplicationContext());
                 boolean isDeleted = dbUtility.deleteUser(emailId);
                 if (isDeleted) {
-
+                    finishActivity();
                 }
             }
         });
+    }
+
+    private void finishActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
